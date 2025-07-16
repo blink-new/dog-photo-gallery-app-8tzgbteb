@@ -1,4 +1,4 @@
-import { Dialog, DialogContent } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Heart, X, Download, Calendar, Tag } from 'lucide-react'
@@ -52,6 +52,9 @@ export function PhotoDetailModal({ photo, isOpen, onClose, onToggleFavorite }: P
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] p-0 overflow-hidden">
+        <DialogTitle className="sr-only">
+          Photo Details: {photo.title}
+        </DialogTitle>
         <div className="relative">
           {/* Close button */}
           <Button
